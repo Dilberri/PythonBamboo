@@ -1,3 +1,4 @@
+#%%
 import pandas as pd
 
 
@@ -17,15 +18,12 @@ df['Valor'] = df['Valor'].replace({',': '.'}, regex=True)
 # Convertir la columna a tipo numérico
 df['Valor'] = pd.to_numeric(df['Valor'])
 
-#%%
+
 # Ventas por plataforma
 ventas_por_plataforma = df.groupby('Plataforma')['Valor'].sum()
 print(ventas_por_plataforma)
-#%%
 
-# Promedio de ventas por plataforma
-promedio_por_plataforma = df.groupby('Plataforma')['Valor'].mean()
-print(promedio_por_plataforma)
+# Ventas por género
+ventas_por_genero = df.groupby('Genero')['Valor'].sum()
+print(ventas_por_genero)
 
-# Ver plataformas únicas
-print(df['Plataforma'].unique())
