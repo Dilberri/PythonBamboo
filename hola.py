@@ -27,3 +27,13 @@ print(ventas_por_plataforma)
 ventas_por_genero = df.groupby('Genero')['Valor'].sum()
 print(ventas_por_genero)
 
+# Ventas por año
+ventas_por_año = df.groupby('Año')['Valor'].sum()
+print(ventas_por_año)
+
+
+
+
+
+
+# %%
